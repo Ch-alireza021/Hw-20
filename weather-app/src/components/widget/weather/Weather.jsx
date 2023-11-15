@@ -11,9 +11,13 @@ const Weather = () => {
   const [weather,setWeather]= useState([]);
   const weekday = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
   const [day,setDay]= useState([])
+  const [date,setDate]= useState([])
 
 function creatDay(date){
 const day=new Date(date).getDay();
+const month = (new Date(date)).toLocaleString('de-DE', { year: 'numeric', month: 'long', day: 'numeric'});
+setDate(month)
+console.log(month);
 setDay(day)
 }
 
@@ -30,18 +34,19 @@ setDay(day)
           .catch()
         }, []);
 
-       
+       const WC=weather.current;
 
         return (
     <div>
       <Search />
       <div className="weather__container">
         <div className="backGround left">
-             <DateAndLoc day={weekday[day]} date={weather.location?.localtime}  loc={weather.location?.name} />
-             <TodayWeather temp={weather.current?.temp_c} weather={"sunny"}/>
+             <DateAndLoc day={weekday[day]} date={date}  loc={weather.location?.name} />
+             <TodayWeather temp={WC?.temp_c} weather={WC?.condition.text}/>
         </div>
         <div className="right ">
-           <WeatherDetails Pre={"0%"} Hum={"42%"} Wind={"3 Km/h"} />
+           <WeatherDetails Pre={`${WC?.precip_in} %`} Hum={`${WC?.humidity} %`} Wind={`${WC?.wind_kph
+} km/h`} />
            <DaysCart  temp={"30 *c"} day={"Tue"} active={"active"}  />
         </div>
       </div>
