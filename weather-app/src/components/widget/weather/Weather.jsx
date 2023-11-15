@@ -1,10 +1,23 @@
+
+import { getWeather } from "../../../api/getWeather";
 import DateAndLoc from "../../base/dateAndLoc/DateAndLoc";
 import DaysCart from "../../base/daysCart/DaysCart";
 import Search from "../../base/search/Search";
 import TodayWeather from "../../base/todayWeather/TodayWeather";
 import WeatherDetails from "../../base/weatherDetails/WeatherDetails";
+import { useEffect, useState } from "react";
 const Weather = () => {
-  return (
+
+  const [weather,setWeather]= useState("")
+
+    useEffect(() => {
+        getWeather()
+          .then(data=> setWeather(data))
+          .catch()
+        }, []);
+
+        
+        return (
     <div>
       <Search />
       <div className="weather__container">
