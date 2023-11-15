@@ -1,8 +1,8 @@
 import DateAndLoc from "../../base/dateAndLoc/DateAndLoc";
+import DaysCart from "../../base/daysCart/DaysCart";
 import Search from "../../base/search/Search";
 import TodayWeather from "../../base/todayWeather/TodayWeather";
 import WeatherDetails from "../../base/weatherDetails/WeatherDetails";
-
 const Weather = () => {
   return (
     <div>
@@ -14,7 +14,7 @@ const Weather = () => {
         </div>
         <div className="right ">
            <WeatherDetails Pre={"0%"} Hum={"42%"} Wind={"3 Km/h"} />
-
+           <DaysCart  temp={"30 *c"} day={"Tue"} active={"active"}  />
         </div>
       </div>
     </div>

@@ -20,3 +20,20 @@
   background-image: linear-gradient(152deg, rgba(136, 235, 239, 0.90) -0.04%, rgba(83, 90, 230, 0.438) 100%),url(../public/image/backGround.png);
 
 }
+
+.notActive{
+    border-radius: 10px;
+background: #272E37;
+box-shadow: 1px 2px 4px 0px #222831;
+width: 103px;
+height: 165px;
+color: white;
+}
+.active{
+    border-radius: 10px;
+    background: #FFF;
+    box-shadow: 1px 2px 4px 0px #222831;
+    width: 104px;
+height: 168px;
+color:black ;
+}
