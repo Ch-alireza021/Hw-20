@@ -2,7 +2,7 @@
  
     return (
       <div>
-          <button onClick={onBtn} onDoubleClick={doubleClick} className={`${backGround} rounded-full w-[120px] h-[120px]`}>
+          <button onClick={onBtn}  className={`${backGround} rounded-full w-[120px] h-[120px]`}>
               {text}
           </button>
       </div>

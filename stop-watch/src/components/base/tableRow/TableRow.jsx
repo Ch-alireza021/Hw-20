@@ -3,7 +3,7 @@
   
     return (
       <tr className={backGround }  key={lap}>
-        <td className="px-5 ">Lap {lap}</td>
+        <td className="px-5 ">{lap}</td>
         <td>{lapTime}</td>
       </tr>
     );

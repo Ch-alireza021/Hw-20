@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from "react";
 import Button from "../../base/button/Button";
 import { calculateTimeDifference } from "../../../app/calculateTimeDifference";
+import Lap from "../laps/Lap";
 
 
 
@@ -61,6 +62,7 @@ export default function StopWatch() {
     setMinutes("00");
     setHours("00");
     setLaps([]);
+    setTime(false)
   };
 
   return (
@@ -86,7 +88,7 @@ export default function StopWatch() {
               onBtn={isRunning ? handleStop :handleReset}
             />
           </div>
-          {/* <Lap laps={laps} /> */}
+          <Lap laps={laps} />
      
     </div>
   );
