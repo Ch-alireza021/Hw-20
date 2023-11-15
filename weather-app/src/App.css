@@ -2,3 +2,19 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components{
+    .left{
+        @apply w-[34.2vw] h-[65vh] rounded-l-[30px] px-8 py-[4.8vh] flex flex-col justify-between
+    }
+    .right{
+        @apply bg-[#222831] w-[34.2vw] h-[65vh] rounded-r-[30px] 
+    }
+
+}
+
+
+.backGround{
+  background-image: linear-gradient(152deg, rgba(136, 235, 239, 0.90) -0.04%, rgba(83, 90, 230, 0.438) 100%),url(../public/image/backGround.png);
+
+}
