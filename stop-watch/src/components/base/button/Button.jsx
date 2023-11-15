@@ -1,4 +1,4 @@
-export const Button = ({backGround,text,onBtn}) => {
+ const Button = ({backGround,text,onBtn}) => {
  
     return (
       <div>
@@ -8,3 +8,5 @@ export const Button = ({backGround,text,onBtn}) => {
       </div>
     )
   }
+
+  export default Button;
