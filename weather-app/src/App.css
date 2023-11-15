@@ -8,9 +8,11 @@
         @apply w-[34.2vw] h-[65vh] rounded-l-[30px] px-8 py-[4.8vh] flex flex-col justify-between
     }
     .right{
-        @apply bg-[#222831] w-[34.2vw] h-[65vh] rounded-r-[30px] 
+        @apply bg-[#222831] w-[34.2vw] h-[65vh] rounded-r-[30px] px-[3.82vw] pt-[55px] 
     }
-
+.weather__container{
+    @apply flex justify-center text-white font-bold
+}
 }
 
 

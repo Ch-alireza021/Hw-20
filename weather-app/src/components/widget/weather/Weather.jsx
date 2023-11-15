@@ -7,13 +7,13 @@ const Weather = () => {
   return (
     <div>
       <Search />
-      <div className="flex justify-center">
+      <div className="weather__container">
         <div className="backGround left">
              <DateAndLoc day={"wedensday"} date={11}  loc={"tehran"} />
              <TodayWeather temp={"29 *C"} weather={"sunny"}/>
         </div>
         <div className="right ">
-           <WeatherDetails/>
+           <WeatherDetails Pre={"0%"} Hum={"42%"} Wind={"3 Km/h"} />
 
         </div>
       </div>
