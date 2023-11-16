@@ -4,7 +4,7 @@ const Search = ({handleSearch}) => {
   //   handleSearch()
   // }
   return (
-    <div className="w-[1000px] text-[20px] font-semibold text-white my-[47px]">
+    <div className="w-[68.4vw] text-[20px] font-semibold text-white my-[47px] max-w-[1700px] ">
       <input
         type="search"
         placeholder="search city"

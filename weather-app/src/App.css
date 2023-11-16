@@ -1,39 +1,42 @@
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-@layer components{
-    .left{
-        @apply w-[34.2vw] h-[65vh] rounded-l-[30px] px-8 py-[4.8vh] flex flex-col justify-between
-    }
-    .right{
-        @apply bg-[#222831] w-[34.2vw] h-[65vh] rounded-r-[30px] px-[3.82vw] pt-[55px] 
-    }
-.weather__container{
-    @apply flex justify-center text-white font-bold
-}
-}
-
-
-.backGround{
-  background-image: linear-gradient(152deg, rgba(136, 235, 239, 0.90) -0.04%, rgba(83, 90, 230, 0.438) 100%),url(../public/image/backGround.png);
-
+@layer components {
+  .left {
+    @apply w-[34.2vw] h-[66vh] rounded-[30px] px-8 py-[4.8vh] flex flex-col justify-between;
+  }
+  .right {
+    @apply bg-[#222831] w-[34.2vw] h-[62vh] rounded-r-[30px] px-[3.82vw] pt-[55px];
+  }
+  .weather__container {
+    @apply flex justify-center items-center text-white font-bold;
+  }
 }
 
-.notActive{
-    border-radius: 10px;
-background: #272E37;
-box-shadow: 1px 2px 4px 0px #222831;
-width: 103px;
-height: 165px;
-color: white;
+.backGround {
+  background-image: linear-gradient(
+      152deg,
+      rgba(136, 235, 239, 0.9) -0.04%,
+      rgba(83, 90, 230, 0.438) 100%
+    ),
+    url(../public/image/backGround.png);
+  background-size: cover;
 }
-.active{
-    border-radius: 10px;
-    background: #FFF;
-    box-shadow: 1px 2px 4px 0px #222831;
-    width: 104px;
-height: 168px;
-color:black ;
+
+.notActive {
+  border-radius: 10px;
+  background: #272e37;
+  box-shadow: 1px 2px 4px 0px #222831;
+  width: 103px;
+  height: 165px;
+  color: white;
+}
+.active {
+  border-radius: 10px;
+  background: #fff;
+  box-shadow: 1px 2px 4px 0px #222831;
+  width: 104px;
+  height: 168px;
+  color: black;
 }
