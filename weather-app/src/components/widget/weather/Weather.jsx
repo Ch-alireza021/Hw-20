@@ -9,45 +9,55 @@ import { useEffect, useState } from "react";
 const Weather = () => {
 
   const [weather,setWeather]= useState([]);
-  const weekday = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
-  const [day,setDay]= useState([])
-  const [date,setDate]= useState([])
+  const [day,setDay]= useState([]);
+  const [date,setDate]= useState([]);
+  const [locait,setLocait]= useState("Tehran");
+  const WC=weather.current;
 
 function creatDay(date){
-const day=new Date(date).getDay();
-const month = (new Date(date)).toLocaleString('de-DE', { year: 'numeric', month: 'long', day: 'numeric'});
-setDate(month)
-console.log(month);
-setDay(day)
+  const newDate = new Date(date);
+  const dayLong = newDate.toLocaleString('en-us', {weekday: 'long'});
+  const dayShort = newDate.toLocaleString('en-us', {weekday: 'short'});
+const todayDate = (new Date(date)).toLocaleString('de-DE', { year: 'numeric', month: 'long', day: 'numeric'});
+setDate(todayDate)
+setDay({dayLong,dayShort})
 }
 
 
 
+
     useEffect(() => {
-        getWeather()
-          .then(data=> {setWeather(data);
-            // setDay(data.location.localtime)
-            creatDay(data.location.localtime)
-            console.log(data);
-            // const time=weather?.localtime
+        getWeather(locait)
+          .then(data=> {
+            if(data){
+              setWeather(data);
+              // setDay(data.location.localtime)
+              creatDay(data.location.localtime)
+              console.log(data);
+              console.log(locait);
+              // const time=weather?.localtime
+            }
           })
           .catch()
-        }, []);
+        }, [locait]);
+    
 
-       const WC=weather.current;
+       function handleSearch(value){
+        setLocait(value)
+       }
 
         return (
     <div>
-      <Search />
+      <Search handleSearch={handleSearch} />
       <div className="weather__container">
         <div className="backGround left">
-             <DateAndLoc day={weekday[day]} date={date}  loc={weather.location?.name} />
-             <TodayWeather temp={WC?.temp_c} weather={WC?.condition.text}/>
+             <DateAndLoc day={day.dayLong} date={date}  loc={weather.location?.name} />
+             <TodayWeather temp={WC?.temp_c} weather={WC?.condition.text} src={WC?.condition.icon}/>
         </div>
         <div className="right ">
            <WeatherDetails Pre={`${WC?.precip_in} %`} Hum={`${WC?.humidity} %`} Wind={`${WC?.wind_kph
 } km/h`} />
-           <DaysCart  temp={"30 *c"} day={"Tue"} active={"active"}  />
+           <DaysCart  temp={WC?.temp_c} day={day.dayShort} active={"active"}  src={WC?.condition.icon}/>
         </div>
       </div>
     </div>
